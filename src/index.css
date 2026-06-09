@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #00d1c1;
+  --color-brand-dark: #00a89c;
+  --color-brand-deep: #006b63;
+  --color-brand-light: #9af8f0;
+  --color-brand-black: #0a0a0a;
+  --color-navy: #002147;
+  --color-emerald: #059669;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Sora", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-slate-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-brand-black/95 backdrop-blur-xl border-b border-brand/10;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .cta-pattern {
+    background-color: #0c1a2e;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(0, 209, 193, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(0, 168, 156, 0.1) 0%, transparent 35%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d1c1' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .btn-brand {
+    @apply inline-flex items-center justify-center rounded-full bg-brand px-8 py-4 text-base font-bold text-brand-black shadow-xl shadow-brand/30 hover:bg-brand-light transition-all hover:-translate-y-0.5;
+  }
+
+  .animate-letter-reveal {
+    animation: letter-reveal 0.45s ease forwards;
+  }
+
+  .animate-spin-slow {
+    animation: spin 30s linear infinite;
+  }
+
+  .animate-principle-content {
+    animation: principle-content 0.5s ease forwards;
+  }
+
+  .animate-wave-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: wave-draw 2s ease forwards;
+  }
+
+  .animate-wave-flow {
+    stroke-dasharray: 12 18;
+    animation: wave-flow 3s linear infinite;
+  }
+
+  .animate-wave-float {
+    animation: wave-float 3s ease-in-out infinite;
+  }
+
+  .animate-process-step {
+    opacity: 0;
+    animation: process-step-in 0.7s ease forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-letter-reveal,
+    .animate-principle-content,
+    .animate-process-step {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .animate-spin-slow,
+    .animate-wave-float,
+    .animate-wave-flow {
+      animation: none;
+    }
+
+    .animate-wave-draw {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+@keyframes letter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes principle-content {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes wave-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes wave-flow {
+  to {
+    stroke-dashoffset: -60;
+  }
+}
+
+@keyframes wave-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes process-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
