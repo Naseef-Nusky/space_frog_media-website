@@ -49,7 +49,7 @@ export default function ContactPage() {
               {contactPage.formTitle}
             </h2>
 
-            <ContactForm variant="page" requirePhone requireMessage={false} />
+            <ContactForm variant="page" />
           </div>
         </div>
       </section>

@@ -1,11 +1,9 @@
-export function validateContactForm(values, options = {}) {
-  const { requirePhone = true, requireMessage = false } = options
+export function validateContactForm(values) {
   const errors = {}
 
   const name = values.name?.trim() ?? ''
   const email = values.email?.trim() ?? ''
   const phone = values.phone?.trim() ?? ''
-  const website = values.website?.trim() ?? ''
   const message = values.message?.trim() ?? ''
 
   if (!name) {
@@ -20,36 +18,16 @@ export function validateContactForm(values, options = {}) {
     errors.email = 'Enter a valid email address'
   }
 
-  if (requirePhone) {
-    if (!phone) {
-      errors.phone = 'Phone number is required'
-    } else if (!/^[\d\s+\-()]{7,20}$/.test(phone)) {
-      errors.phone = 'Enter a valid phone number'
-    }
-  } else if (phone && !/^[\d\s+\-()]{7,20}$/.test(phone)) {
+  if (!phone) {
+    errors.phone = 'Phone number is required'
+  } else if (!/^[\d\s+\-()]{7,20}$/.test(phone)) {
     errors.phone = 'Enter a valid phone number'
   }
 
-  if (website) {
-    const url = /^https?:\/\//i.test(website) ? website : `https://${website}`
-    try {
-      const parsed = new URL(url)
-      if (!parsed.hostname.includes('.')) {
-        errors.website = 'Enter a valid website URL'
-      }
-    } catch {
-      errors.website = 'Enter a valid website URL'
-    }
-  }
-
-  if (requireMessage) {
-    if (!message) {
-      errors.message = 'Message is required'
-    } else if (message.length < 10) {
-      errors.message = 'Message must be at least 10 characters'
-    }
-  } else if (message && message.length < 10) {
-    errors.message = 'Message must be at least 10 characters if provided'
+  if (!message) {
+    errors.message = 'Message is required'
+  } else if (message.length < 10) {
+    errors.message = 'Message must be at least 10 characters'
   }
 
   return errors

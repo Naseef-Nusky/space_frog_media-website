@@ -23,7 +23,7 @@ export default function Contact() {
         </div>
 
         <div className="max-w-xl mx-auto">
-          <ContactForm variant="home" requirePhone={false} requireMessage={false} />
+          <ContactForm variant="home" />
         </div>
       </div>
     </section>

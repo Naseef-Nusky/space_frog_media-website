@@ -30,7 +30,7 @@ function Field({ label, error, children }) {
   )
 }
 
-export default function ContactForm({ variant = 'home', requirePhone = true, requireMessage = false }) {
+export default function ContactForm({ variant = 'home' }) {
   const styles = fieldConfig[variant]
   const [values, setValues] = useState(emptyContactForm)
   const [errors, setErrors] = useState({})
@@ -49,7 +49,7 @@ export default function ContactForm({ variant = 'home', requirePhone = true, req
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const validationErrors = validateContactForm(values, { requirePhone, requireMessage })
+    const validationErrors = validateContactForm(values)
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors)
@@ -69,7 +69,7 @@ export default function ContactForm({ variant = 'home', requirePhone = true, req
           name="name"
           value={values.name}
           onChange={handleChange('name')}
-          placeholder={variant === 'page' ? 'Name*' : 'Name'}
+          placeholder="Name*"
           className={inputClass('name')}
           aria-invalid={Boolean(errors.name)}
         />
@@ -81,7 +81,7 @@ export default function ContactForm({ variant = 'home', requirePhone = true, req
           name="email"
           value={values.email}
           onChange={handleChange('email')}
-          placeholder={variant === 'page' ? 'Email*' : 'Email'}
+          placeholder="Email*"
           className={inputClass('email')}
           aria-invalid={Boolean(errors.email)}
         />
@@ -93,7 +93,7 @@ export default function ContactForm({ variant = 'home', requirePhone = true, req
           name="phone"
           value={values.phone}
           onChange={handleChange('phone')}
-          placeholder={variant === 'page' ? 'Phone number*' : 'Phone number'}
+          placeholder="Phone number*"
           className={inputClass('phone')}
           aria-invalid={Boolean(errors.phone)}
         />
@@ -105,9 +105,8 @@ export default function ContactForm({ variant = 'home', requirePhone = true, req
           name="website"
           value={values.website}
           onChange={handleChange('website')}
-          placeholder="Website URL"
-          className={inputClass('website')}
-          aria-invalid={Boolean(errors.website)}
+          placeholder="Website URL (optional)"
+          className={`${styles.input} ${styles.inputOk}`}
         />
       </Field>
 
@@ -117,7 +116,7 @@ export default function ContactForm({ variant = 'home', requirePhone = true, req
           rows={variant === 'page' ? 5 : 4}
           value={values.message}
           onChange={handleChange('message')}
-          placeholder="Message"
+          placeholder="Message*"
           className={`${inputClass('message')} resize-none`}
           aria-invalid={Boolean(errors.message)}
         />
