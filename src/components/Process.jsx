@@ -51,7 +51,7 @@ export default function Process() {
     <section id="process" className="relative py-20 lg:py-28 bg-slate-50 overflow-hidden">
       <div className="section-container relative">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 uppercase tracking-wide">
+          <h2 className="section-title text-brand-dark">
             {process.title}
           </h2>
           <div className="mx-auto mt-4 h-1 w-48 rounded-full bg-linear-to-r from-brand via-brand-dark to-brand-deep" />

@@ -8,8 +8,12 @@ export default function ScrollToHash() {
     if (hash) {
       const timer = setTimeout(() => {
         const element = document.querySelector(hash)
-        element?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+          return
+        }
+        window.scrollTo(0, 0)
+      }, 150)
       return () => clearTimeout(timer)
     }
 

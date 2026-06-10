@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { whoWeArePage, whyWork } from '../data/content'
 import { IconBadge } from '../components/Icons'
 import PageHero from '../components/PageHero'
@@ -37,12 +38,12 @@ export default function WhoWeAre() {
                   {paragraph}
                 </p>
               ))}
-              <a
-                href={intro.ctaHref}
+              <Link
+                to={intro.ctaHref}
                 className="inline-flex items-center justify-center rounded-md bg-brand px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-brand-black shadow-lg shadow-brand/25 hover:bg-brand-light transition-all hover:-translate-y-0.5"
               >
                 {intro.cta}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

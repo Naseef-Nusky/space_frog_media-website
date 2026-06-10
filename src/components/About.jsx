@@ -10,7 +10,7 @@ export default function About() {
       <div className="section-container relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-4xl lg:text-6xl font-extrabold text-brand-dark tracking-tight mb-6">
+            <h2 className="section-title text-brand-dark mb-6">
               {about.title}
             </h2>
             <h3 className="text-xl lg:text-2xl font-bold text-slate-900 leading-snug mb-8">

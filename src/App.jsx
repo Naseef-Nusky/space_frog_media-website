@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToHash from './components/ScrollToHash'
@@ -23,6 +23,7 @@ function App() {
             <Route path="/services/:slug" element={<ServicePage />} />
             <Route path="/frequently-asked-questions" element={<FAQ />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <Footer />

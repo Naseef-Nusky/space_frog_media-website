@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { contact, hero } from '../data/content'
 import HeroAnimatedTitle from './HeroAnimatedTitle'
 
@@ -36,12 +37,12 @@ export default function Hero() {
             >
               {hero.ctaPrimary}
             </a>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="font-sans inline-flex items-center justify-center rounded-full border-2 border-white/50 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-sm hover:bg-white/20 transition-all hover:-translate-y-1"
             >
               {hero.ctaSecondary}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

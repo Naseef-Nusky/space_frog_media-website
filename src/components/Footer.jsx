@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { contact, footer } from '../data/content'
 
 function scrollToTop() {
@@ -19,12 +20,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {footer.services.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="text-sm hover:text-brand-dark transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -54,13 +55,13 @@ export default function Footer() {
           <p>© {footer.copyright}</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {footer.bottomLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="hover:text-brand-dark transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

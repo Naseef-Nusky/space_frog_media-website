@@ -17,7 +17,7 @@ export default function Contact() {
       <div className="section-container relative z-10">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <p className="text-brand font-bold text-xl lg:text-2xl mb-4">{ctaSection.brand}</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight text-balance">
+          <h2 className="section-title text-white leading-tight text-balance">
             {ctaSection.title}
           </h2>
         </div>

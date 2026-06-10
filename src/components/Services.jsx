@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { services } from '../data/content'
 import { Icon } from './Icons'
 
@@ -23,18 +24,18 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col p-4">
                 <p className="text-sm leading-relaxed text-slate-600 flex-1 text-justify">
                   {service.description}
                 </p>
 
-                <a
-                  href={service.href}
-                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-brand-black hover:bg-brand-light transition-colors"
+                <Link
+                  to={service.href}
+                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-brand-black hover:bg-brand-light transition-colors"
                 >
                   Learn more
                   <Icon name="arrow" className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
