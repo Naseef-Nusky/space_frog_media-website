@@ -56,16 +56,16 @@ export default function ContactPage() {
 
       <section className="py-12 lg:py-16 bg-white border-t border-slate-200">
         <div className="section-container">
-          <div className="grid sm:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6 text-center max-w-2xl mx-auto">
             {contactPage.social.map((item) => (
               <div key={item.platform}>
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand text-white mb-4">
-                  <Icon name={item.icon} className="w-7 h-7" />
+                <div className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-brand text-white mb-2 sm:mb-3">
+                  <Icon name={item.icon} className="w-4 h-4 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-sm font-bold uppercase tracking-wide text-slate-800 mb-1">
+                <h3 className="text-[10px] sm:text-sm font-bold uppercase tracking-wide text-slate-800 mb-0.5">
                   {item.platform}
                 </h3>
-                <p className="text-sm text-brand-dark">{item.handle}</p>
+                <p className="text-[10px] sm:text-sm text-brand-dark">{item.handle}</p>
               </div>
             ))}
           </div>
