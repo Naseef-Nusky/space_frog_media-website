@@ -30,16 +30,16 @@ export default function Hero() {
             <HeroAnimatedTitle lines={titleLines} />
           </h1>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="mt-10 flex flex-row flex-wrap gap-2 sm:gap-4 justify-center items-center">
             <a
               href={contact.phoneTel}
-              className="font-sans inline-flex items-center justify-center rounded-full bg-brand px-8 py-4 text-base font-bold text-brand-black shadow-lg shadow-brand/25 hover:bg-brand-light transition-all hover:-translate-y-1"
+              className="font-sans inline-flex flex-1 sm:flex-none items-center justify-center rounded-full bg-brand px-4 py-3 sm:px-8 sm:py-4 text-xs sm:text-base font-bold text-brand-black shadow-lg shadow-brand/25 hover:bg-brand-light transition-all hover:-translate-y-1 whitespace-nowrap"
             >
               {hero.ctaPrimary}
             </a>
             <Link
               to="/contact"
-              className="font-sans inline-flex items-center justify-center rounded-full border-2 border-white/50 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-sm hover:bg-white/20 transition-all hover:-translate-y-1"
+              className="font-sans inline-flex flex-1 sm:flex-none items-center justify-center rounded-full border-2 border-white/50 bg-white/10 px-4 py-3 sm:px-8 sm:py-4 text-xs sm:text-base font-bold text-white backdrop-blur-sm hover:bg-white/20 transition-all hover:-translate-y-1 whitespace-nowrap"
             >
               {hero.ctaSecondary}
             </Link>
